@@ -149,10 +149,34 @@ body{
 
 /* Mobile */
 @media (max-width:900px){
-    .main-nav{display:none}
-    .burger{display:block}
-    .mobile-menu{display:none;background:white;padding:12px;border-top:1px solid rgba(0,0,0,0.05)}
-    .mobile-menu a{display:block;padding:8px 0;text-decoration:none;color:var(--accent)}
-    .mobile-menu.active{display:block}
-    .hero h1{font-size:24px}
+    /* Скрываем главное меню по умолчанию */
+    #mobileMenu {
+        display: none;
+        background: white;
+        padding: 12px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        position: absolute;
+        top: 60px; /* под хедером */
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #mobileMenu.active {
+        display: flex;
+        flex-direction: column;
+    }
+    #mobileMenu a {
+        display: block;
+        padding: 8px 0;
+        text-decoration: none;
+        color: var(--accent);
+    }
+
+    /* Показываем бургер */
+    .burger {
+        display: block;
+    }
 }
+
